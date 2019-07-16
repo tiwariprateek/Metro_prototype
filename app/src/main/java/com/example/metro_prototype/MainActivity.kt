@@ -1,5 +1,6 @@
 package com.example.metro_prototype
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -63,6 +64,8 @@ class MainActivity : AppCompatActivity() {
         source.setAdapter(adapter1)
         destination.setAdapter(adapter2)
         button.setOnClickListener {
+            val intent=Intent(this,suggestions::class.java)
+            startActivity(intent)
             val final1=source.text.toString()
             val final2=destination.text.toString()
             val string="Your Source is $final1 \n and Destination station is $final2 "
